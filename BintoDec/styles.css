@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -9,6 +10,20 @@ body {
 }
 
 h3 {
+=======
+*
+{
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body
+{
+    min-height: 100vh;
+    background-color: antiquewhite;
+}
+h3
+{
+>>>>>>> 157951278703e9fee8bfefbdfc6cb7b491d962e7
     font-size: 2em;
     color: blueviolet;
 }
