@@ -1,4 +1,4 @@
-// Binary to ... Conversations
+//~ Binary to ... Conversations
 //! Binary to Decimal
 
 let binToDecButton = document.querySelector("#btdButton");
@@ -41,7 +41,6 @@ const binToOct = () => {
     dec += binValue[i] * pow;
     pow *= 2;
   }
-  console.log(dec);
   // decimal to octal
   let oct = "";
   while (dec > 0) {
@@ -53,13 +52,45 @@ const binToOct = () => {
   console.log(oct);
   oct = oct.split("").reverse().join("");
   result.innerHTML = oct;
-  // result.innerHTML = dec;
 };
 
 binToOctButton.addEventListener("click", binToOct);
 
+//! Binary to Hexadecimal
 
-// Decimal to ... Conversations
+let binToHexaButton = document.querySelector("#bthButton");
+
+const binToHexa = () => {
+  let binValue = document.querySelector("#bthInput").value;
+  let result = document.querySelector(".bthResult");
+  if (binValue.length == 0) {
+    alert("Field is empty!");
+    result.innerHTML = null;
+    return;
+  }
+  // binary to decimal
+  let pow = 1,
+    dec = 0;
+  for (let i = binValue.length - 1; i >= 0; i--) {
+    dec += binValue[i] * pow;
+    pow *= 2;
+  }
+  // decimal to hexadecimal
+  const arr = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+  let hex = "";
+  while (dec > 0) {
+    let rem = dec % 16;
+    hex += arr[rem];
+    dec = Math.floor(dec / 16);
+  }
+  hex = hex.split("").reverse().join("");
+  result.innerHTML = hex;
+};
+
+binToHexaButton.addEventListener("click", binToHexa);
+
+
+//~ Decimal to ... Conversations
 //! Decimal To Hexadecimal
 
 let decToHexaButton = document.querySelector("#dthButton");
@@ -73,24 +104,7 @@ const dectoHex = () => {
     result.innerHTML = null;
     return;
   }
-  const arr = [
-    "0",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-  ];
+  const arr = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
   let hex = "";
   while (decValue > 0) {
     let rem = decValue % 16;
@@ -129,6 +143,6 @@ const DecToBin = () => {
 
 decToBinButton.addEventListener("click", DecToBin);
 
-// Octal to ... Conversations
+//~ Octal to ... Conversations
 
-// Hexadecimal to ... Conversations
+//~ Hexadecimal to ... Conversations
