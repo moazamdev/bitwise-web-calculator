@@ -1,33 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Number System Convertor</title>
-</head>
 
-<body>
+    <title>Number System Convertor</title>
+  </head>
+
+  <body>
     <h3>Binary to Decimal Converter</h3>
-    <label for="binary">Binary Value: </label>
-    <input id="binary" type="text" placeholder="Binary value..." />
-    <button id="button">Convert</button>
-    <p>Decimal: <span class="result"></span></p>
-    <script defer src="index.js"></script>
+    <label for="binaryInput">Binary Value: </label>
+    <input id="binaryInput" type="text" placeholder="Binary value..." />
+    <button id="binaryButton">Convert</button>
+    <p>Decimal: <span class="decimalResult"></span></p>
 
     <h3>Decimal to Hexadecimal</h3>
-    <label for="Decimal">Decimal Value: </label>
-    <input id="Decimal" type="text" placeholder="Decimal..." />
-    <button id="button">Convert</button>
-    <p>Hexadecimal: <span class="result"></span></p>
-    <script defer src="DectoHEx.js"></script>
-
-</body>
-
-
-
-
-
+    <label for="decimalInput">Decimal Value: </label>
+    <input id="decimalInput" type="text" placeholder="Decimal..." />
+    <button id="decimalButton">Convert</button>
+    <p>Hexadecimal: <span class="hexaResult"></span></p>
+  </body>
+  <script src="bin-to-dec.js"></script>
+  <!-- <script src="dec-to-hex.js"></script> -->
 </html>
