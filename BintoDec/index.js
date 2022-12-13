@@ -22,6 +22,43 @@ const binToDec = () => {
 
 binToDecButton.addEventListener("click", binToDec);
 
+//! Binary to Octal
+
+let binToOctButton = document.querySelector("#btoButton");
+
+const binToOct = () => {
+  let binValue = document.querySelector("#btoInput").value;
+  let result = document.querySelector(".btoResult");
+  if (binValue.length == 0) {
+    alert("Field is empty!");
+    result.innerHTML = null;
+    return;
+  }
+  // binary to decimal
+  let pow = 1,
+    dec = 0;
+  for (let i = binValue.length - 1; i >= 0; i--) {
+    dec += binValue[i] * pow;
+    pow *= 2;
+  }
+  console.log(dec);
+  // decimal to octal
+  let oct = "";
+  while (dec > 0) {
+    let rem = dec % 8;
+    oct += rem.toString();
+    dec = Math.floor(dec / 8);
+  }
+  console.log(typeof oct);
+  console.log(oct);
+  oct = oct.split("").reverse().join("");
+  result.innerHTML = oct;
+  // result.innerHTML = dec;
+};
+
+binToOctButton.addEventListener("click", binToOct);
+
+
 // Decimal to ... Conversations
 //! Decimal To Hexadecimal
 
@@ -62,9 +99,6 @@ const dectoHex = () => {
   }
   hex = hex.split("").reverse().join("");
   result.innerHTML = hex;
-
-  console.log(typeof hex);
-  console.log(hex);
 };
 decToHexaButton.addEventListener("click", dectoHex);
 
