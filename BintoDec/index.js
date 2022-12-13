@@ -1,19 +1,20 @@
-// Binary to Decimal
+// Binary to ... Conversations
+//! Binary to Decimal
 
-let binToDecButton = document.querySelector("#binaryButton");
+let binToDecButton = document.querySelector("#btdButton");
 
 const binToDec = () => {
-  let binaryValue = document.querySelector("#binaryInput").value;
-  let result = document.querySelector(".decimalResult");
-  if (binaryValue.length == 0) {
+  let binValue = document.querySelector("#btdInput").value;
+  let result = document.querySelector(".btdResult");
+  if (binValue.length == 0) {
     alert("Field is empty!");
     result.innerHTML = null;
     return;
   }
   let pow = 1,
     dec = 0;
-  for (let i = binaryValue.length - 1; i >= 0; i--) {
-    dec += binaryValue[i] * pow;
+  for (let i = binValue.length - 1; i >= 0; i--) {
+    dec += binValue[i] * pow;
     pow *= 2;
   }
   result.innerHTML = dec;
@@ -21,15 +22,16 @@ const binToDec = () => {
 
 binToDecButton.addEventListener("click", binToDec);
 
-// Decimal To Hexadecimal
+// Decimal to ... Conversations
+//! Decimal To Hexadecimal
 
-let decToHexaButton = document.querySelector("#decimalButton");
+let decToHexaButton = document.querySelector("#dthButton");
 
 const dectoHex = () => {
-  let decValueInString = document.querySelector("#decimalInput").value;
-  let decValue = parseInt(decValueInString);
-  let result = document.querySelector(".hexaResult");
-  if (decValueInString.length == 0) {
+  let dthInString = document.querySelector("#dthInput").value;
+  let decValue = parseInt(dthInString);
+  let result = document.querySelector(".dthResult");
+  if (dthInString.length == 0) {
     alert("Field is empty!");
     result.innerHTML = null;
     return;
@@ -52,7 +54,7 @@ const dectoHex = () => {
     "E",
     "F",
   ];
-  let hex = '';
+  let hex = "";
   while (decValue > 0) {
     let rem = decValue % 16;
     hex += arr[rem];
@@ -65,3 +67,34 @@ const dectoHex = () => {
   console.log(hex);
 };
 decToHexaButton.addEventListener("click", dectoHex);
+
+//! Decimal to Binary
+
+let decToBinButton = document.querySelector("#dtbButton");
+
+const DecToBin = () => {
+  let dtbValueInString = document.querySelector("#dtbInput").value;
+  let dtbValue = parseInt(dtbValueInString);
+  let result = document.querySelector(".dtbResult");
+
+  if (dtbValueInString.length == 0) {
+    alert("Field is empty!");
+    result.innerHTML = null;
+    return;
+  }
+
+  let bin = "";
+
+  for (let i = 0; dtbValue > 0; i++) {
+    bin += dtbValue % 2;
+    dtbValue = Math.floor(dtbValue / 2);
+  }
+  bin = bin.split("").reverse().join("");
+  result.innerHTML = bin;
+};
+
+decToBinButton.addEventListener("click", DecToBin);
+
+// Octal to ... Conversations
+
+// Hexadecimal to ... Conversations
