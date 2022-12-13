@@ -91,6 +91,40 @@ binToHexaButton.addEventListener("click", binToHexa);
 
 
 //~ Decimal to ... Conversations
+
+//! Decimal to Binary
+
+let decToBinButton = document.querySelector("#dtbButton");
+
+const DecToBin = () => {
+  let dtbValueInString = document.querySelector("#dtbInput").value;
+  let dtbValue = parseInt(dtbValueInString);
+  let result = document.querySelector(".dtbResult");
+
+  if (dtbValueInString.length == 0) {
+    alert("Field is empty!");
+    result.innerHTML = null;
+    return;
+  }
+  if (dtbValue == 0) 
+  {
+    result.innerHTML = "0000";
+    return;
+  }
+
+  let bin = "";
+  while (dtbValue > 0) {
+    let rem = dtbValue % 2;
+    bin += rem;
+    dtbValue = Math.floor(dtbValue / 2);
+  }
+  bin = bin.split("").reverse().join("");
+  result.innerHTML = bin;
+};
+
+decToBinButton.addEventListener("click", DecToBin);
+
+
 //! Decimal To Hexadecimal
 
 let decToHexaButton = document.querySelector("#dthButton");
@@ -116,32 +150,40 @@ const dectoHex = () => {
 };
 decToHexaButton.addEventListener("click", dectoHex);
 
-//! Decimal to Binary
+//! Decimal to Octal
 
-let decToBinButton = document.querySelector("#dtbButton");
+let decToOctButton = document.querySelector("#dtoButton");
 
-const DecToBin = () => {
-  let dtbValueInString = document.querySelector("#dtbInput").value;
-  let dtbValue = parseInt(dtbValueInString);
-  let result = document.querySelector(".dtbResult");
+const DecToOct = () => {
+  let dtoValueInString = document.querySelector("#dtoInput").value;
+  let dtoValue = parseInt(dtoValueInString);
+  let result = document.querySelector(".dtoResult");
 
-  if (dtbValueInString.length == 0) {
+  if (dtoValueInString.length == 0) {
     alert("Field is empty!");
     result.innerHTML = null;
     return;
   }
-
-  let bin = "";
-
-  for (let i = 0; dtbValue > 0; i++) {
-    bin += dtbValue % 2;
-    dtbValue = Math.floor(dtbValue / 2);
+  if (dtoValue == 0) 
+  {
+    result.innerHTML = "0000";
+    return;
   }
-  bin = bin.split("").reverse().join("");
-  result.innerHTML = bin;
+
+  let oct = "";
+  while (dtoValue > 0) {
+    let rem = dtoValue % 8;
+    oct += rem.toString();
+    dtoValue = Math.floor(dtoValue / 8);
+  }
+  console.log(oct)
+  console.log(typeof oct)
+  oct = oct.split("").reverse().join("");
+  result.innerHTML = oct;
 };
 
-decToBinButton.addEventListener("click", DecToBin);
+decToOctButton.addEventListener("click", DecToOct);
+
 
 //~ Octal to ... Conversations
 
