@@ -14,6 +14,40 @@ let errorMsg = document.querySelector(".error-msg");
 
 // Functions
 
+//! Hexadecimal to Decimal
+let hexToDec = (hexValueInString) => {
+    let hexValue = hexValueInString.toUpperCase();
+    // console.log(htdInString);
+    // let hexValue = parseInt(htdInString);
+    // let result = document.querySelector(".htdResult");
+    // if (hexValue.length == 0) {
+    //     alert("Field is empty!");
+        // result.innerHTML = null;
+    //     return;
+    // }
+    let length = hexValue.length;
+    let base = 1;
+    let dec = 0;
+    for (let i = length - 1; i >= 0; i--) {
+        if (hexValue[i] >= '0' && hexValue[i] <= '9') {
+            // console.log(hexValue[i]);
+            dec += (hexValue[i].charCodeAt(0) - 48) * base;
+            base = base * 16;
+        } else if (hexValue[i] >= 'A' && hexValue[i] <= 'F') {
+            console.log(hexValue[i]);
+            dec += (hexValue[i].charCodeAt(0) - 55) * base;
+            base = base * 16;
+        }
+        // console.log(dec)
+        // console.log(typeof dec)
+        // result.innerHTML = dec;
+    }
+    dec = dec.toString();
+    return dec;
+
+};
+
+
 // function for checking if field is empty
 let isFieldEmpty = () => {
   if (inputField.value.length == 0) {
@@ -128,9 +162,11 @@ let numConversions = () => {
     }
     // hexadecimal to decimal
     else if (toDropdown.value.toLowerCase() == "decimal") {
+      console.log(typeof inputField.value)
+      console.log(inputField.value)
       let dec = hexToDec(inputField.value);
-      let oct = decToOct(dec);
-      outputField.value = oct;
+      outputField.value = dec;
+      // outputField.value = oct;
     }
     // hexadecimal to octal
     else if (toDropdown.value.toLowerCase() == "octal") {

@@ -1,6 +1,9 @@
 * {
+    margin: 0;
+    padding: 0;
   box-sizing: border-box;
   font-family: "Barlow", sans-serif;
+  border-radius: 0;
 }
 
 body {
@@ -10,24 +13,83 @@ body {
   align-items: center;
   justify-content: center;
 }
-h1{
-    color: rgb(233, 159, 0);
-
+h1 {
+  color: rgb(233, 159, 0);
 }
 h3 {
-    font-size: 1.4em;
-    color: rgb(39, 39, 39);
+  font-size: 1.4em;
+  font-weight: 500;
+  color: rgb(39, 39, 39);
 }
 .error-msg {
   color: crimson;
 }
-.container
+.container {
+  width: 700px;
+  padding: 60px;
+  background: rgb(248, 248, 248);
+  border-radius: 2px;
+  box-shadow: -100px -100px 0 -90px rgb(233, 159, 0),
+    100px 100px 0 -90px rgb(233, 159, 0);
+}
+label {
+  font-weight: 300;
+  font-size: 1em;
+  margin: 10px 0;
+}
+.selectInputFieldsBox {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.from-dropdown,
+.to-dropdown {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+select,
+input, option {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #555555;
+}
+.options
 {
-    width: 600px;
-    height: 400px;
-    padding: 40px;
-    background: rgb(248, 248, 248);
-    border-radius: 2px;
-    box-shadow: -100px -100px 0 -90px rgb(233, 159, 0),
-                100px 100px 0 -90px rgb(233, 159, 0);
+    height: 20px;
+}
+select:focus, input:focus, option:focus
+{
+    border: 1px solid rgb(233, 159, 0);
+    outline: none;
+}
+
+.inputBox, .outputBox
+{
+    display: flex;
+    flex-direction: column;
+}
+.buttonBox
+{
+    margin: 10px 0;
+}
+button
+{
+    padding: 10px 30px;
+    font-size: 1em;
+    border: 1px solid #555555;
+    font-weight: 500;
+    cursor: pointer;
+}
+#convertButton
+{
+    background-color: rgb(233, 159, 0);
+    color:white;
+    border-color: rgb(233, 159, 0);
+}
+button:hover, #convertButton:hover
+{
+    background-color: black;
+    color: white;
+    border: 1px solid black;
 }

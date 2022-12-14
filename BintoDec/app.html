@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./icon.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,31 +23,35 @@
         <span class="to-conversion-type">Binary</span>
       </h3>
       <div class="selectInputFieldsBox">
-        <label for="fromInputField">From:</label>
-        <select
-          name="fromInputField"
-          id="fromInputField"
-          class="dropdownSelect"
-        >
-          <option value="Binary">Binary</option>
-          <option value="Decimal">Decimal</option>
-          <option value="Octal">Octal</option>
-          <option value="Hexadecimal">Hexadecimal</option>
-        </select>
+        <div class="from-dropdown">
+          <label for="fromInputField">From:</label>
+          <select
+            name="fromInputField"
+            id="fromInputField"
+            class="dropdownSelect"
+          >
+            <option class="options" value="Binary">Binary</option>
+            <option class="options" value="Decimal">Decimal</option>
+            <option class="options" value="Octal">Octal</option>
+            <option class="options" value="Hexadecimal">Hexadecimal</option>
+          </select>
+        </div>
 
-        <label for="toInputField">To:</label>
-        <select name="toInputField" id="toInputField" class="dropdownSelect">
-          <option value="Binary">Binary</option>
-          <option value="Decimal">Decimal</option>
-          <option value="Octal">Octal</option>
-          <option value="Hexadecimal">Hexadecimal</option>
-        </select>
+        <div class="to-dropdown">
+          <label for="toInputField">To:</label>
+          <select name="toInputField" id="toInputField" class="dropdownSelect">
+            <option class="options" value="Binary">Binary</option>
+            <option class="options" value="Decimal">Decimal</option>
+            <option class="options" value="Octal">Octal</option>
+            <option class="options" value="Hexadecimal">Hexadecimal</option>
+          </select>
+        </div>
       </div>
 
       <div class="inputFieldsBox">
         <div class="inputBox">
           <label for="inputField"
-            ><span class="from-conversion-type">Binary</span> Number:</label
+            >Input <span class="from-conversion-type">Binary</span> Number:</label
           >
           <input type="text" id="inputField" placeholder="Binary Value..." />
           <span class="error-msg"></span>
@@ -58,7 +62,7 @@
         </div>
         <div class="outputBox">
           <label for="outputField"
-            ><span class="to-conversion-type">Decimal</span> Number:</label
+            >Output <span class="to-conversion-type">Decimal</span> Number:</label
           >
           <input
             type="text"
