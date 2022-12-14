@@ -95,6 +95,7 @@ button:hover,
 footer{
     display: flex;
     justify-content: space-between;
+    margin-top: 0;
 }
 #footer-msg
 {
