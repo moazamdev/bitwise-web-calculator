@@ -358,35 +358,72 @@ let hexToBinButton = document.querySelector("#htbButton");
 
 const hexToBin = () => {
     let htbInString = document.querySelector("#htbInput").value.toUpperCase();
-    console.log(htbInString);
-    let hexValue = parseInt(htbInString);
     let result = document.querySelector(".htbResult");
     if (htbInString.length == 0) {
         alert("Field is empty!");
         result.innerHTML = null;
         return;
     }
-    let length = htbInString.length;
-    let base = 1;
-    let dec = 0;
-    for (let i = length - 1; i >= 0; i--) {
-        if (htbInString[i] >= '0' && htbInString[i] <= '9') {
-            console.log(htbInString[i]);
-            dec += (htbInString[i].charCodeAt(0) - 48) * base;
-            base = base * 16;
-        } else if (htbInString[i] >= 'A' && htbInString[i] <= 'F') {
-            console.log(htbInString[i]);
-            dec += (htbInString[i].charCodeAt(0) - 55) * base;
-            base = base * 16;
+    let binary = "";
+    let i = 0;
+
+    while (htbInString[i]) {
+        switch (htbInString[i]) {
+            case '0':
+                binary += "0000";
+                break;
+            case '1':
+                binary += "0001";
+                break;
+            case '2':
+                binary += "0010";
+                break;
+            case '3':
+                binary += "0011";
+                break;
+            case '4':
+                binary += "0100";
+                break;
+            case '5':
+                binary += "0101";
+                break;
+            case '6':
+                binary += "0110";
+                break;
+            case '7':
+                binary += "0111";
+                break;
+            case '8':
+                binary += "1000";
+                break;
+            case '9':
+                binary += "1001";
+                break;
+            case 'A':
+                binary += "1010";
+                break;
+            case 'B':
+                binary += "1011";
+                break;
+            case 'C':
+                binary += "1100";
+                break;
+            case 'D':
+                binary += "1101";
+                break;
+            case 'E':
+                binary += "1110";
+                break;
+            case 'F':
+                binary += "1111";
+                break;
+            default:
+                alert(`\nInvalid Hexa Digit ${htbInString[i]}`);
+                break;
         }
+        i++;
     }
-    let bin = "";
-    while (dec > 0) {
-        let rem = dec % 2;
-        bin += rem;
-        dec = Math.floor(dec / 2);
-    }
-    bin = bin.split("").reverse().join("");
-    result.innerHTML = bin;
+    result.innerHTML = binary;
 };
+
 hexToBinButton.addEventListener("click", hexToBin);
