@@ -94,7 +94,7 @@ const octToDec = (octValueInString) => {
     rem = 0;
   let base = 1;
 
-  while (octValue != 0) {
+  while (octValue > 0) {
     rem = octValue % 10;
     dec = dec + rem * base;
     octValue = Math.floor(octValue / 10);
