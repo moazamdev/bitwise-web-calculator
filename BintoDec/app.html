@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Number System Convertor</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Number System Convertor</h1>
+      <h3><span class="from-conversion-type">Binary</span> to <span class="to-conversion-type">Binary</span></h3>
+      <div class="selectInputFieldsBox">
+        <label for="fromInputField">From:</label>
+        <select
+          name="fromInputField"
+          id="fromInputField"
+          class="dropdownSelect"
+        >
+          <option value="Binary">Binary</option>
+          <option value="Decimal">Decimal</option>
+          <option value="Octal">Octal</option>
+          <option value="Hexadecimal">Hexadecimal</option>
+        </select>
+
+        <label for="toInputField">To:</label>
+        <select name="toInputField" id="toInputField" class="dropdownSelect">
+          <option value="Binary">Binary</option>
+          <option value="Decimal">Decimal</option>
+          <option value="Octal">Octal</option>
+          <option value="Hexadecimal">Hexadecimal</option>
+        </select>
+      </div>
+
+      <div class="inputFieldsBox">
+        <div class="inputBox">
+          <label for="inputField"
+            ><span class="from-conversion-type">Binary</span> Number:</label
+          >
+          <input type="text" id="inputField" placeholder="Binary Value..." />
+          <span class="error-msg"></span>
+        </div>
+        <div class="buttonBox">
+          <button id="convertButton">= Convert</button>
+          <button id="resetButton">x Reset</button>
+        </div>
+        <div class="outputBox">
+          <label for="outputField"
+            ><span class="to-conversion-type">Decimal</span> Number:</label
+          >
+          <input
+            type="text"
+            id="outputField"
+            placeholder="Decimal Value..."
+            value=""
+            readonly
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
