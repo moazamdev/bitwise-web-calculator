@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: "Barlow", sans-serif;
   border-radius: 0;
@@ -17,6 +17,7 @@ h1 {
   color: rgb(233, 159, 0);
 }
 h3 {
+  margin-top: 15px;
   font-size: 1.4em;
   font-weight: 500;
   color: rgb(39, 39, 39);
@@ -49,47 +50,45 @@ label {
   width: 50%;
 }
 select,
-input, option {
+input,
+option {
   padding: 10px;
   font-size: 1em;
   border: 1px solid #555555;
 }
-.options
-{
-    height: 20px;
+.options {
+  height: 20px;
 }
-select:focus, input:focus, option:focus
-{
-    border: 1px solid rgb(233, 159, 0);
-    outline: none;
+select:focus,
+input:focus,
+option:focus {
+  border: 1px solid rgb(233, 159, 0);
+  outline: none;
 }
 
-.inputBox, .outputBox
-{
-    display: flex;
-    flex-direction: column;
+.inputBox,
+.outputBox {
+  display: flex;
+  flex-direction: column;
 }
-.buttonBox
-{
-    margin: 10px 0;
+.buttonBox {
+  margin: 10px 0;
 }
-button
-{
-    padding: 10px 30px;
-    font-size: 1em;
-    border: 1px solid #555555;
-    font-weight: 500;
-    cursor: pointer;
+button {
+  padding: 10px 30px;
+  font-size: 1em;
+  border: 1px solid #555555;
+  font-weight: 500;
+  cursor: pointer;
 }
-#convertButton
-{
-    background-color: rgb(233, 159, 0);
-    color:white;
-    border-color: rgb(233, 159, 0);
+#convertButton {
+  background-color: rgb(233, 159, 0);
+  color: white;
+  border-color: rgb(233, 159, 0);
 }
-button:hover, #convertButton:hover
-{
-    background-color: black;
-    color: white;
-    border: 1px solid black;
+button:hover,
+#convertButton:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
 }

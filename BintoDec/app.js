@@ -8,45 +8,29 @@ let convertButton = document.querySelector("#convertButton");
 let resetButton = document.querySelector("#resetButton");
 let inputField = document.querySelector("#inputField");
 let outputField = document.querySelector("#outputField");
-// let inputField.value = document.querySelector("#inputField").value;
-// let outputField.value = document.querySelector("#outputField").value;
 let errorMsg = document.querySelector(".error-msg");
 
 // Functions
 
-//! Hexadecimal to Decimal
+// Hexadecimal to Decimal
 let hexToDec = (hexValueInString) => {
-    let hexValue = hexValueInString.toUpperCase();
-    // console.log(htdInString);
-    // let hexValue = parseInt(htdInString);
-    // let result = document.querySelector(".htdResult");
-    // if (hexValue.length == 0) {
-    //     alert("Field is empty!");
-        // result.innerHTML = null;
-    //     return;
-    // }
-    let length = hexValue.length;
-    let base = 1;
-    let dec = 0;
-    for (let i = length - 1; i >= 0; i--) {
-        if (hexValue[i] >= '0' && hexValue[i] <= '9') {
-            // console.log(hexValue[i]);
-            dec += (hexValue[i].charCodeAt(0) - 48) * base;
-            base = base * 16;
-        } else if (hexValue[i] >= 'A' && hexValue[i] <= 'F') {
-            console.log(hexValue[i]);
-            dec += (hexValue[i].charCodeAt(0) - 55) * base;
-            base = base * 16;
-        }
-        // console.log(dec)
-        // console.log(typeof dec)
-        // result.innerHTML = dec;
+  let hexValue = hexValueInString.toUpperCase();
+  let length = hexValue.length;
+  let base = 1;
+  let dec = 0;
+  for (let i = length - 1; i >= 0; i--) {
+    if (hexValue[i] >= "0" && hexValue[i] <= "9") {
+      dec += (hexValue[i].charCodeAt(0) - 48) * base;
+      base = base * 16;
+    } else if (hexValue[i] >= "A" && hexValue[i] <= "F") {
+      console.log(hexValue[i]);
+      dec += (hexValue[i].charCodeAt(0) - 55) * base;
+      base = base * 16;
     }
-    dec = dec.toString();
-    return dec;
-
+  }
+  dec = dec.toString();
+  return dec;
 };
-
 
 // function for checking if field is empty
 let isFieldEmpty = () => {
@@ -162,8 +146,8 @@ let numConversions = () => {
     }
     // hexadecimal to decimal
     else if (toDropdown.value.toLowerCase() == "decimal") {
-      console.log(typeof inputField.value)
-      console.log(inputField.value)
+      console.log(typeof inputField.value);
+      console.log(inputField.value);
       let dec = hexToDec(inputField.value);
       outputField.value = dec;
       // outputField.value = oct;
