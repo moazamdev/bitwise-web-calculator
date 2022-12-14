@@ -188,3 +188,39 @@ decToOctButton.addEventListener("click", DecToOct);
 //~ Octal to ... Conversations
 
 //~ Hexadecimal to ... Conversations
+
+//! Hexadecimal to Decimal
+let hexToDecButton = document.querySelector("#htdButton");
+
+const hexToDec = () => {
+    let htdInString = document.querySelector("#htdInput").value.toUpperCase();
+    console.log(htdInString);
+    let hexValue = parseInt(htdInString);
+    let result = document.querySelector(".htdResult");
+    if (htdInString.length == 0) {
+        alert("Field is empty!");
+        result.innerHTML = null;
+        return;
+    }
+    let length = htdInString.length;
+    let base = 1;
+    let dec = 0;
+    for (let i = length - 1; i >= 0; i--) {
+        if (htdInString[i] >= '0' && htdInString[i] <= '9') {
+            console.log(htdInString[i]);
+            dec += (htdInString[i].charCodeAt(0) - 48) * base;
+            base = base * 16;
+        } else if (htdInString[i] >= 'A' && htdInString[i] <= 'F') {
+            console.log(htdInString[i]);
+            dec += (htdInString[i].charCodeAt(0) - 55) * base;
+            base = base * 16;
+        }
+        // console.log(dec)
+        // console.log(typeof dec)
+        result.innerHTML = dec;
+    }
+    
+  };
+  hexToDecButton.addEventListener("click", hexToDec);
+
+
