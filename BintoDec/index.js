@@ -187,6 +187,63 @@ decToOctButton.addEventListener("click", DecToOct);
 
 //~ Octal to ... Conversations
 
+//! Octal to Binary
+let otbButton = document.querySelector("#otbButton");
+
+const octalToBin = () => {
+  let otbValueInString = document.querySelector("#otbInput").value;
+  let result = document.querySelector(".otbResult");
+
+  if (otbValueInString.length == 0) {
+    alert("Field is empty!");
+    result.innerHTML = null;
+    return;
+  }
+  
+  let binary = "";
+  let i =0 ;
+
+  while (otbValueInString[i]) 
+  {
+    switch (otbValueInString[i]) {
+    case '0':
+        binary += "000";
+        break;
+    case '1':
+        binary += "001";
+        break;
+    case '2':
+        binary += "010";
+        break;
+    case '3':
+        binary += "011";
+        break;
+    case '4':
+        binary += "100";
+        break;
+    case '5':
+        binary += "101";
+        break;
+    case '6':
+        binary += "110";
+        break;
+    case '7':
+        binary += "111";
+        break;
+    default:
+        alert(`\nInvalid Octal Digit ${otbValueInString[i]}`);
+        break;
+    }
+    i++;
+}
+
+result.innerHTML = binary;
+
+};
+
+otbButton.addEventListener("click", octalToBin);
+
+
 //! Octal to Decimal
 
 let otdButton = document.querySelector("#otdButton");
@@ -195,7 +252,7 @@ const octalToDec = () => {
   let otdValueInString = document.querySelector("#otdInput").value;
   let otdValue = parseInt(otdValueInString);
   let result = document.querySelector(".otdResult");
-
+  
   if (otdValueInString.length == 0) {
     alert("Field is empty!");
     result.innerHTML = null;
@@ -218,6 +275,8 @@ const octalToDec = () => {
 };
 
 otdButton.addEventListener("click", octalToDec);
+
+
 
 
 //~ Hexadecimal to ... Conversations
