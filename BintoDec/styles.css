@@ -92,3 +92,11 @@ button:hover,
   color: white;
   border: 1px solid black;
 }
+footer{
+    display: flex;
+    justify-content: space-between;
+}
+#footer-msg
+{
+    align-self: center;
+}
