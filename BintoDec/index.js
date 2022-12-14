@@ -187,6 +187,39 @@ decToOctButton.addEventListener("click", DecToOct);
 
 //~ Octal to ... Conversations
 
+//! Octal to Decimal
+
+let otdButton = document.querySelector("#otdButton");
+
+const octalToDec = () => {
+  let otdValueInString = document.querySelector("#otdInput").value;
+  let otdValue = parseInt(otdValueInString);
+  let result = document.querySelector(".otdResult");
+
+  if (otdValueInString.length == 0) {
+    alert("Field is empty!");
+    result.innerHTML = null;
+    return;
+  }
+  
+  let  dec = 0, rem = 0;
+  let base = 1;
+
+  while (otdValue != 0)
+  {
+      rem = otdValue % 10;
+      dec = dec + (rem * base);
+      otdValue = Math.floor(otdValue / 10);
+      base = base * 8;
+  }
+
+  result.innerHTML = dec;
+
+};
+
+otdButton.addEventListener("click", octalToDec);
+
+
 //~ Hexadecimal to ... Conversations
 
 //! Hexadecimal to Decimal
