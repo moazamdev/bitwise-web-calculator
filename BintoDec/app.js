@@ -32,6 +32,20 @@ let hexToDec = (hexValueInString) => {
   return dec;
 };
 
+// Decimal To Hexadecimal
+const decToHex = (decValueInString) => {
+    let decValue = parseInt(decValueInString);
+    const arr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
+    let hex = "";
+    while (decValue > 0) {
+        let rem = decValue % 16;
+        hex += arr[rem];
+        decValue = Math.floor(decValue / 16);
+    }
+    hex = hex.split("").reverse().join("");
+    return hex;
+};
+
 // function for checking if field is empty
 let isFieldEmpty = () => {
   if (inputField.value.length == 0) {
@@ -104,7 +118,7 @@ let numConversions = () => {
     }
     // decimal to hexadecimal
     else if (toDropdown.value.toLowerCase() == "hexadecimal") {
-      let hex = decTohex(inputField.value);
+      let hex = decToHex(inputField.value);
       outputField.value = hex;
     }
     // decimal to decimal
