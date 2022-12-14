@@ -26,7 +26,6 @@ let hexToDec = (hexValueInString) => {
       dec += (hexValue[i].charCodeAt(0) - 48) * base;
       base = base * 16;
     } else if (hexValue[i] >= "A" && hexValue[i] <= "F") {
-      console.log(hexValue[i]);
       dec += (hexValue[i].charCodeAt(0) - 55) * base;
       base = base * 16;
     }
@@ -72,8 +71,7 @@ const decToOct = (decValueInString) => {
   let result = document.querySelector(".dtoResult");
 
   if (decValue == 0) {
-    result.innerHTML = "0000";
-    return;
+    return "0000";
   }
 
   let oct = "";
@@ -119,10 +117,6 @@ const binToDec = (binValueInString) => {
 // Decimal To Binary
 const decToBin = (decimalValueInString) => {
   let decValue = parseInt(decimalValueInString);
-  if (decValue == 0) {
-    result.innerHTML = "0000";
-    return;
-  }
 
   let bin = "";
   while (decValue > 0) {
@@ -184,7 +178,7 @@ let numConversions = () => {
     // binary to hexadecimal
     else if (toDropdown.value.toLowerCase() == "hexadecimal") {
       let dec = binToDec(inputField.value);
-      let hex = decTohex(dec);
+      let hex = decToHex(dec);
       outputField.value = hex;
     }
     // binary to binary
@@ -230,7 +224,7 @@ let numConversions = () => {
     // octal to hexadecimal
     else if (toDropdown.value.toLowerCase() == "hexadecimal") {
       let dec = octToDec(inputField.value);
-      let hex = decTohex(dec);
+      let hex = decToHex(dec);
       outputField.value = hex;
     }
     // octal to octal
@@ -248,8 +242,6 @@ let numConversions = () => {
     }
     // hexadecimal to decimal
     else if (toDropdown.value.toLowerCase() == "decimal") {
-      console.log(typeof inputField.value);
-      console.log(inputField.value);
       let dec = hexToDec(inputField.value);
       outputField.value = dec;
       // outputField.value = oct;
