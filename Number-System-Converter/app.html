@@ -16,70 +16,78 @@
   </head>
 
   <body>
-    <div class="container">
-      <h1>Number System Convertor</h1>
-      <h3>
-        <span class="from-conversion-type">Binary</span> to
-        <span class="to-conversion-type">Binary</span>
-      </h3>
-      <div class="selectInputFieldsBox">
-        <div class="from-dropdown">
-          <label for="fromInputField">From:</label>
-          <select
-            name="fromInputField"
-            id="fromInputField"
-            class="dropdownSelect"
-          >
-            <option class="options" value="Binary">Binary</option>
-            <option class="options" value="Decimal">Decimal</option>
-            <option class="options" value="Octal">Octal</option>
-            <option class="options" value="Hexadecimal">Hexadecimal</option>
-          </select>
+    <div class="wrapper">
+      <div class="container">
+        <h1>Number System Convertor</h1>
+        <h3>
+          <span class="from-conversion-type">Binary</span> to
+          <span class="to-conversion-type">Binary</span>
+        </h3>
+        <div class="selectInputFieldsBox">
+          <div class="from-dropdown">
+            <label for="fromInputField">From:</label>
+            <select
+              name="fromInputField"
+              id="fromInputField"
+              class="dropdownSelect"
+            >
+              <option class="options" value="Binary">Binary</option>
+              <option class="options" value="Decimal">Decimal</option>
+              <option class="options" value="Octal">Octal</option>
+              <option class="options" value="Hexadecimal">Hexadecimal</option>
+            </select>
+          </div>
+
+          <div class="to-dropdown">
+            <label for="toInputField">To:</label>
+            <select
+              name="toInputField"
+              id="toInputField"
+              class="dropdownSelect"
+            >
+              <option class="options" value="Binary">Binary</option>
+              <option class="options" value="Decimal">Decimal</option>
+              <option class="options" value="Octal">Octal</option>
+              <option class="options" value="Hexadecimal">Hexadecimal</option>
+            </select>
+          </div>
         </div>
 
-        <div class="to-dropdown">
-          <label for="toInputField">To:</label>
-          <select name="toInputField" id="toInputField" class="dropdownSelect">
-            <option class="options" value="Binary">Binary</option>
-            <option class="options" value="Decimal">Decimal</option>
-            <option class="options" value="Octal">Octal</option>
-            <option class="options" value="Hexadecimal">Hexadecimal</option>
-          </select>
+        <div class="inputFieldsBox">
+          <div class="inputBox">
+            <label for="inputField"
+              >Input
+              <span class="from-conversion-type">Binary</span> Number:</label
+            >
+            <input type="text" id="inputField" placeholder="Binary Value..." />
+            <span class="error-msg"></span>
+          </div>
+          <div class="buttonBox">
+            <button id="convertButton">= Convert</button>
+            <button id="resetButton">x Reset</button>
+          </div>
+          <div class="outputBox">
+            <label for="outputField"
+              >Output
+              <span class="to-conversion-type">Decimal</span> Number:</label
+            >
+            <input
+              type="text"
+              id="outputField"
+              placeholder="Decimal Value..."
+              value=""
+              readonly
+            />
+          </div>
         </div>
       </div>
-
-      <div class="inputFieldsBox">
-        <div class="inputBox">
-          <label for="inputField"
-            >Input
-            <span class="from-conversion-type">Binary</span> Number:</label
-          >
-          <input type="text" id="inputField" placeholder="Binary Value..." />
-          <span class="error-msg"></span>
-        </div>
-        <div class="buttonBox">
-          <button id="convertButton">= Convert</button>
-          <button id="resetButton">x Reset</button>
-        </div>
-        <div class="outputBox">
-          <label for="outputField"
-            >Output
-            <span class="to-conversion-type">Decimal</span> Number:</label
-          >
-          <input
-            type="text"
-            id="outputField"
-            placeholder="Decimal Value..."
-            value=""
-            readonly
-          />
-        </div>
-      </div>
+      <footer>
+        <p id="footer-msg">Made with ❤️ by PMS</p>
+        <p id="footer-msg">
+          Copyright © <span class="year"></span> | All rights reserved
+        </p>
+      </footer>
     </div>
-    <footer>
-      <p id="footer-msg">Made with ❤️ by PMS</p>
-      <p id="footer-msg">Copyright © <span class="year"></span> | All rights reserved</p>
-    </footer>
   </body>
   <script src="app.js"></script>
 </html>
