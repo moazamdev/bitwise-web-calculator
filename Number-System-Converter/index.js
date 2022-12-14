@@ -273,9 +273,6 @@ const octalToDec = () => {
 
 otdButton.addEventListener("click", octalToDec);
 
-
-
-
 //~ Hexadecimal to ... Conversations
 
 //! Hexadecimal to Decimal
