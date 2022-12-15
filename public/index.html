@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="shortcut icon" href="./icon.png" type="image/x-icon" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+		<title>Number System Convertor</title>
+
+		<!-- update the version number as needed -->
+		<script defer src="/__/firebase/9.15.0/firebase-app-compat.js"></script>
+		<!-- include only the Firebase features as you need -->
+		<script
+			defer
+			src="/__/firebase/9.15.0/firebase-auth-compat.js"
+		></script>
+		<script
+			defer
+			src="/__/firebase/9.15.0/firebase-database-compat.js"
+		></script>
+		<script
+			defer
+			src="/__/firebase/9.15.0/firebase-firestore-compat.js"
+		></script>
+		<script
+			defer
+			src="/__/firebase/9.15.0/firebase-functions-compat.js"
+		></script>
+		<script
+			defer
+			src="/__/firebase/9.15.0/firebase-messaging-compat.js"
+		></script>
+		<script
+			defer
+			src="/__/firebase/9.15.0/firebase-storage-compat.js"
+		></script>
+		<script
+			defer
+			src="/__/firebase/9.15.0/firebase-analytics-compat.js"
+		></script>
+		<script
+			defer
+			src="/__/firebase/9.15.0/firebase-remote-config-compat.js"
+		></script>
+		<script
+			defer
+			src="/__/firebase/9.15.0/firebase-performance-compat.js"
+		></script>
+		<!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+		<script defer src="/__/firebase/init.js?useEmulator=true"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- HEADER HTML CODE -->
+			<header>
+				<div class="header-box">
+					<div class="logo-box">
+						<img class="logo" src="./icon.png" alt="BaseConvert" />
+						<span>BaseConvert</span>
+					</div>
+					<nav class="nav">
+						<span class="nav-item"><sub>01.</sub> Home</span>
+						<span class="nav-item"><sub>02.</sub> About</span>
+						<span class="nav-item"><sub>03.</sub> Contact</span>
+					</nav>
+				</div>
+			</header>
+			<div class="container">
+				<!-- LEFT CONTAINER HTML CODE -->
+				<div class="leftContainer">
+					<h1>Number System Convertor</h1>
+					<h3>
+						<span class="from-conversion-type">Binary</span>
+						to
+						<span class="to-conversion-type">Binary</span>
+					</h3>
+					<div class="selectInputFieldsBox">
+						<div class="from-dropdown">
+							<label for="fromInputField">From:</label>
+							<select
+								name="fromInputField"
+								id="fromInputField"
+								class="dropdownSelect"
+							>
+								<option selected class="options" value="Binary">
+									Binary
+								</option>
+								<option class="options" value="Decimal">
+									Decimal
+								</option>
+								<option class="options" value="Octal">
+									Octal
+								</option>
+								<option class="options" value="Hexadecimal">
+									Hexadecimal
+								</option>
+							</select>
+						</div>
+
+						<div class="to-dropdown">
+							<label for="toInputField">To:</label>
+							<select
+								name="toInputField"
+								id="toInputField"
+								class="dropdownSelect"
+							>
+								<option class="options" value="Binary">
+									Binary
+								</option>
+								<option
+									selected
+									class="options"
+									value="Decimal"
+								>
+									Decimal
+								</option>
+								<option class="options" value="Octal">
+									Octal
+								</option>
+								<option class="options" value="Hexadecimal">
+									Hexadecimal
+								</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="inputFieldsBox">
+						<div class="inputBox">
+							<label for="inputField"
+								>Input
+								<span class="from-conversion-type">Binary</span>
+								Number:</label
+							>
+							<input
+								type="text"
+								id="inputField"
+								placeholder="Binary Value..."
+							/>
+							<span class="error-msg"></span>
+						</div>
+						<div class="buttonBox">
+							<button id="convertButton">= Convert</button>
+							<button id="resetButton">x Reset</button>
+							<button id="swapButton">↑↓ Swap</button>
+						</div>
+						<div class="outputBox">
+							<label for="outputField"
+								>Output
+								<span class="to-conversion-type">Decimal</span>
+								Number:</label
+							>
+							<input
+								type="text"
+								id="outputField"
+								placeholder="Decimal Value..."
+								value=""
+								readonly
+							/>
+						</div>
+					</div>
+				</div>
+
+				<!-- RIGHT CONTAINER HTML CODE -->
+				<div class="rightContainer">
+					<div class="predefineConversations">
+						<h3>Number Conversion</h3>
+						<ul class="prdefine-items">
+							<li
+								data-from="Binary"
+								data-to="Decimal"
+								class="item"
+							>
+								⇾ Binary to Decimal
+							</li>
+							<li data-from="Binary" data-to="Octal" class="item">
+								⇾ Binary to Octal
+							</li>
+							<li
+								data-from="Binary"
+								data-to="Hexadecimal"
+								class="item"
+							>
+								⇾ Binary to Hexadecimal
+							</li>
+							<li
+								data-from="Decimal"
+								data-to="Binary"
+								class="item"
+							>
+								⇾ Decimal to Binary
+							</li>
+							<li
+								data-from="Decimal"
+								data-to="Octal"
+								class="item"
+							>
+								⇾ Decimal to Octal
+							</li>
+							<li
+								data-from="Decimal"
+								data-to="Hexadecimal"
+								class="item"
+							>
+								⇾ Decimal to Hexadecimal
+							</li>
+							<li data-from="Octal" data-to="Binary" class="item">
+								⇾ Octal to Binary
+							</li>
+							<li
+								data-from="Octal"
+								data-to="Decimal"
+								class="item"
+							>
+								⇾ Octal to Decimal
+							</li>
+							<li
+								data-from="Octal"
+								data-to="Hexadecimal"
+								class="item"
+							>
+								⇾ Octal to Hexadecimal
+							</li>
+							<li
+								data-from="Hexadecimal"
+								data-to="Binary"
+								class="item"
+							>
+								⇾ Hexadecimal to Binary
+							</li>
+							<li
+								data-from="Hexadecimal"
+								data-to="Decimal"
+								class="item"
+							>
+								⇾ Hexadecimal to Decimal
+							</li>
+							<li
+								data-from="Hexadecimal"
+								data-to="Octal"
+								class="item"
+							>
+								⇾ Hexadecimal to Octal
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- FOOTER HTML CODE -->
+			<footer>
+				<p id="footer-msg">Made with ❤️ by PMS</p>
+				<p id="footer-msg">
+					Copyright © <span class="year"></span> | All rights reserved
+				</p>
+			</footer>
+		</div>
+		<script src="app.js"></script>
+	</body>
+</html>
