@@ -128,6 +128,16 @@ const decToBin = (decimalValueInString) => {
   return bin;
 };
 
+const hexToBin = (hexValueInString) => {
+  let dec = hexToDec(hexValueInString);
+  let hexLength = hexValueInString.length * 4;
+  let bin = decToBin(dec);
+  let outputLength = bin.length;
+  let noOfZeros = hexLength - outputLength;
+  let result = bin.padStart(outputLength + noOfZeros, "0");
+  return result;
+};
+
 // function for checking if field is empty
 let isFieldEmpty = () => {
   if (inputField.value.length == 0) {
@@ -236,8 +246,8 @@ let numConversions = () => {
   else {
     // hexadecimal to binary
     if (toDropdown.value.toLowerCase() == "binary") {
-      let dec = hexToDec(inputField.value);
-      let bin = decToBin(dec);
+      // let dec = hexToDec(inputField.value);
+      let bin = hexToBin(inputField.value);
       outputField.value = bin;
     }
     // hexadecimal to decimal
