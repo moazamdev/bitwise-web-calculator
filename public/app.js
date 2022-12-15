@@ -107,6 +107,9 @@ const decToOct = (decValueInString) => {
 
 // Octal to Decimal
 const octToDec = (octValueInString) => {
+	if (isOctal(octValueInString)) {
+		return;
+	}
 	let octValue = parseInt(octValueInString);
 
 	let dec = 0,
@@ -125,6 +128,9 @@ const octToDec = (octValueInString) => {
 
 // Binary To Decimal
 const binToDec = (binValueInString) => {
+	if (isBinary(binValueInString)) {
+		return;
+	}
 	let pow = 1,
 		dec = 0;
 	for (let i = binValueInString.length - 1; i >= 0; i--) {
@@ -174,6 +180,27 @@ let showErrorMsg = () => {
 	setTimeout(() => {
 		errorMsg.innerHTML = "";
 	}, 2000);
+};
+let isBinary = (binValueInString) => {
+	binValueInString.split("").forEach((char) => {
+		if (char != "0" && char != "1") {
+			inputField.value = "";
+			showErrorMsg();
+			return true;
+		}
+	});
+	return false;
+};
+
+let isOctal = (octValueInString) => {
+	octValueInString.split("").forEach((char) => {
+		if ((char < "0" && char > "7") || (char >= "a" && char <= "z") || (char >= "A" && char <= "Z")) {
+			inputField.value = "";
+			showErrorMsg();
+			return true;
+		}
+	});
+	return false;
 };
 let isDecimal = (decValueInString) => {
 	decValueInString.split("").forEach((char) => {
