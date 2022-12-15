@@ -1,164 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./icon.png" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Number System Convertor</title>
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="./icon.png" type="image/x-icon" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+		<title>Number System Convertor</title>
+	</head>
 
-  <body>
-    <div class="wrapper">
-      <!-- HEADER HTML CODE -->
-      <header>
-        <div class="header-box">
-          <div class="logo-box">
-            <img class="logo" src="./icon.png" alt="BaseConvert" />
-            <span>BaseConvert</span>
-          </div>
-          <nav class="nav">
-            <span class="nav-item"><sub>01.</sub> Home</span>
-            <span class="nav-item"><sub>02.</sub> About</span>
-            <span class="nav-item"><sub>03.</sub> Contact</span>
-          </nav>
-        </div>
-      </header>
-      <div class="container">
-        <!-- LEFT CONTAINER HTML CODE -->
-        <div class="leftContainer">
-          <h1>Number System Convertor</h1>
-          <h3>
-            <span class="from-conversion-type">Binary</span> to
-            <span class="to-conversion-type">Binary</span>
-          </h3>
-          <div class="selectInputFieldsBox">
-            <div class="from-dropdown">
-              <label for="fromInputField">From:</label>
-              <select
-                name="fromInputField"
-                id="fromInputField"
-                class="dropdownSelect"
-              >
-                <option selected class="options" value="Binary">Binary</option>
-                <option class="options" value="Decimal">Decimal</option>
-                <option class="options" value="Octal">Octal</option>
-                <option class="options" value="Hexadecimal">Hexadecimal</option>
-              </select>
-            </div>
+	<body>
+		<div class="wrapper">
+			<!-- HEADER HTML CODE -->
+			<header>
+				<div class="header-box">
+					<div class="logo-box">
+						<img class="logo" src="./icon.png" alt="BaseConvert" />
+						<span>BaseConvert</span>
+					</div>
+					<nav class="nav">
+						<span class="nav-item"><sub>01.</sub> Home</span>
+						<span class="nav-item"><sub>02.</sub> About</span>
+						<span class="nav-item"><sub>03.</sub> Contact</span>
+					</nav>
+				</div>
+			</header>
+			<div class="container">
+				<!-- LEFT CONTAINER HTML CODE -->
+				<div class="leftContainer">
+					<h1>Number System Convertor</h1>
+					<h3>
+						<span class="from-conversion-type">Binary</span> to
+						<span class="to-conversion-type">Binary</span>
+					</h3>
+					<div class="selectInputFieldsBox">
+						<div class="from-dropdown">
+							<label for="fromInputField">From:</label>
+							<select
+								name="fromInputField"
+								id="fromInputField"
+								class="dropdownSelect"
+							>
+								<option selected class="options" value="Binary">
+									Binary
+								</option>
+								<option class="options" value="Decimal">
+									Decimal
+								</option>
+								<option class="options" value="Octal">
+									Octal
+								</option>
+								<option class="options" value="Hexadecimal">
+									Hexadecimal
+								</option>
+							</select>
+						</div>
 
-            <div class="to-dropdown">
-              <label for="toInputField">To:</label>
-              <select
-                name="toInputField"
-                id="toInputField"
-                class="dropdownSelect"
-              >
-                <option class="options" value="Binary">Binary</option>
-                <option selected class="options" value="Decimal">
-                  Decimal
-                </option>
-                <option class="options" value="Octal">Octal</option>
-                <option class="options" value="Hexadecimal">Hexadecimal</option>
-              </select>
-            </div>
-          </div>
+						<div class="to-dropdown">
+							<label for="toInputField">To:</label>
+							<select
+								name="toInputField"
+								id="toInputField"
+								class="dropdownSelect"
+							>
+								<option class="options" value="Binary">
+									Binary
+								</option>
+								<option
+									selected
+									class="options"
+									value="Decimal"
+								>
+									Decimal
+								</option>
+								<option class="options" value="Octal">
+									Octal
+								</option>
+								<option class="options" value="Hexadecimal">
+									Hexadecimal
+								</option>
+							</select>
+						</div>
+					</div>
 
-          <div class="inputFieldsBox">
-            <div class="inputBox">
-              <label for="inputField"
-                >Input
-                <span class="from-conversion-type">Binary</span> Number:</label
-              >
-              <input
-                type="text"
-                id="inputField"
-                placeholder="Binary Value..."
-              />
-              <span class="error-msg"></span>
-            </div>
-            <div class="buttonBox">
-              <button id="convertButton">= Convert</button>
-              <button id="resetButton">x Reset</button>
-              <button id="swapButton">↑↓ Swap</button>
-            </div>
-            <div class="outputBox">
-              <label for="outputField"
-                >Output
-                <span class="to-conversion-type">Decimal</span> Number:</label
-              >
-              <input
-                type="text"
-                id="outputField"
-                placeholder="Decimal Value..."
-                value=""
-                readonly
-              />
-            </div>
-          </div>
-        </div>
+					<div class="inputFieldsBox">
+						<div class="inputBox">
+							<label for="inputField"
+								>Input
+								<span class="from-conversion-type">Binary</span>
+								Number:</label
+							>
+							<input
+								type="text"
+								id="inputField"
+								placeholder="Binary Value..."
+							/>
+							<span class="error-msg"></span>
+						</div>
+						<div class="buttonBox">
+							<button id="convertButton">= Convert</button>
+							<button id="resetButton">x Reset</button>
+							<button id="swapButton">↑↓ Swap</button>
+						</div>
+						<div class="outputBox">
+							<label for="outputField"
+								>Output
+								<span class="to-conversion-type">Decimal</span>
+								Number:</label
+							>
+							<input
+								type="text"
+								id="outputField"
+								placeholder="Decimal Value..."
+								value=""
+								readonly
+							/>
+						</div>
+					</div>
+				</div>
 
-        <!-- RIGHT CONTAINER HTML CODE -->
-        <div class="rightContainer">
-          <div class="predefineConversations">
-            <h3>Number Conversion</h3>
-            <ul class="prdefine-items">
-              <li data-from="Binary" data-to="Decimal" class="item">
-                ⇾ Binary to Decimal
-              </li>
-              <li data-from="Binary" data-to="Octal" class="item">
-                ⇾ Binary to Octal
-              </li>
-              <li data-from="Binary" data-to="Hexadecimal" class="item">
-                ⇾ Binary to Hexadecimal
-              </li>
-              <li data-from="Decimal" data-to="Binary" class="item">
-                ⇾ Decimal to Binary
-              </li>
-              <li data-from="Decimal" data-to="Octal" class="item">
-                ⇾ Decimal to Octal
-              </li>
-              <li data-from="Decimal" data-to="Hexadecimal" class="item">
-                ⇾ Decimal to Hexadecimal
-              </li>
-              <li data-from="Octal" data-to="Binary" class="item">
-                ⇾ Octal to Binary
-              </li>
-              <li data-from="Octal" data-to="Decimal" class="item">
-                ⇾ Octal to Decimal
-              </li>
-              <li data-from="Octal" data-to="Hexadecimal" class="item">
-                ⇾ Octal to Hexadecimal
-              </li>
-              <li data-from="Hexadecimal" data-to="Binary" class="item">
-                ⇾ Hexadecimal to Binary
-              </li>
-              <li data-from="Hexadecimal" data-to="Decimal" class="item">
-                ⇾ Hexadecimal to Decimal
-              </li>
-              <li data-from="Hexadecimal" data-to="Octal" class="item">
-                ⇾ Hexadecimal to Octal
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+				<!-- RIGHT CONTAINER HTML CODE -->
+				<div class="rightContainer">
+					<div class="predefineConversations">
+						<h3>Number Conversion</h3>
+						<ul class="prdefine-items">
+							<li
+								data-from="Binary"
+								data-to="Decimal"
+								class="item"
+							>
+								⇾ Binary to Decimal
+							</li>
+							<li data-from="Binary" data-to="Octal" class="item">
+								⇾ Binary to Octal
+							</li>
+							<li
+								data-from="Binary"
+								data-to="Hexadecimal"
+								class="item"
+							>
+								⇾ Binary to Hexadecimal
+							</li>
+							<li
+								data-from="Decimal"
+								data-to="Binary"
+								class="item"
+							>
+								⇾ Decimal to Binary
+							</li>
+							<li
+								data-from="Decimal"
+								data-to="Octal"
+								class="item"
+							>
+								⇾ Decimal to Octal
+							</li>
+							<li
+								data-from="Decimal"
+								data-to="Hexadecimal"
+								class="item"
+							>
+								⇾ Decimal to Hexadecimal
+							</li>
+							<li data-from="Octal" data-to="Binary" class="item">
+								⇾ Octal to Binary
+							</li>
+							<li
+								data-from="Octal"
+								data-to="Decimal"
+								class="item"
+							>
+								⇾ Octal to Decimal
+							</li>
+							<li
+								data-from="Octal"
+								data-to="Hexadecimal"
+								class="item"
+							>
+								⇾ Octal to Hexadecimal
+							</li>
+							<li
+								data-from="Hexadecimal"
+								data-to="Binary"
+								class="item"
+							>
+								⇾ Hexadecimal to Binary
+							</li>
+							<li
+								data-from="Hexadecimal"
+								data-to="Decimal"
+								class="item"
+							>
+								⇾ Hexadecimal to Decimal
+							</li>
+							<li
+								data-from="Hexadecimal"
+								data-to="Octal"
+								class="item"
+							>
+								⇾ Hexadecimal to Octal
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 
-      <!-- FOOTER HTML CODE -->
-      <footer>
-        <p id="footer-msg">Made with ❤️ by PMS</p>
-        <p id="footer-msg">
-          Copyright © <span class="year"></span> | All rights reserved
-        </p>
-      </footer>
-    </div>
-  </body>
-  <script src="app.js"></script>
+			<!-- FOOTER HTML CODE -->
+			<footer>
+				<p id="footer-msg">Made with ❤️ by PMS</p>
+				<p id="footer-msg">
+					Copyright © <span class="year"></span> | All rights reserved
+				</p>
+			</footer>
+		</div>
+	</body>
+	<script src="app.js"></script>
 </html>
