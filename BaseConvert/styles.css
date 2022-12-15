@@ -8,7 +8,7 @@
 
 body {
   min-height: 100vh;
-  background: url(./bg.png) rgb(236, 236, 236);
+  background: url(./bg.png) rgb(233, 233, 233);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +18,7 @@ h1 {
   color: rgb(233, 159, 0);
 }
 h3 {
-  margin-top: 15px;
+  margin: 15px 0;
   font-size: 1.4em;
   font-weight: 500;
   color: rgb(39, 39, 39);
@@ -27,6 +27,18 @@ h3 {
   color: crimson;
 }
 .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 60px;
+  height: 70vh;
+}
+.leftContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
   width: 700px;
   padding: 60px;
   background: rgb(248, 248, 248);
@@ -51,14 +63,15 @@ label {
   width: 50%;
 }
 select,
+option {
+  cursor: pointer;
+}
+select,
 input,
 option {
   padding: 10px;
   font-size: 1em;
   border: 1px solid #555555;
-}
-.options {
-  height: 20px;
 }
 select:focus,
 input:focus,
@@ -93,6 +106,26 @@ button:hover,
   color: white;
   border: 1px solid black;
 }
+.rightContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 350px;
+  background: rgb(248, 248, 248);
+  padding: 30px;
+  border-radius: 2px;
+}
+.item {
+  list-style: none;
+  line-height: 2em;
+  color: black;
+  cursor: pointer;
+}
+.item:hover {
+  color: rgb(233, 159, 0);
+}
+
 footer {
   width: 100%;
   display: flex;

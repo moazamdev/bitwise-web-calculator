@@ -1,15 +1,24 @@
 // accessing DOM elements
+// dropdown selectors
 let fromDropdown = document.querySelector("#fromInputField");
 let toDropdown = document.querySelector("#toInputField");
 let dropdownSelects = document.querySelectorAll(".dropdownSelect");
+// label selectors
 let fromConversionType = document.querySelectorAll(".from-conversion-type");
 let toConversionType = document.querySelectorAll(".to-conversion-type");
+// button selectors
 let convertButton = document.querySelector("#convertButton");
 let resetButton = document.querySelector("#resetButton");
+// input field selectors
 let inputField = document.querySelector("#inputField");
 let outputField = document.querySelector("#outputField");
+// error msg selector
 let errorMsg = document.querySelector(".error-msg");
+// footer year selector
 let footerYear = document.querySelector(".year");
+// list selectors
+let list = document.querySelector(".prdefine-items");
+let listItems = document.querySelectorAll("li");
 
 footerYear.textContent = new Date().getFullYear();
 
@@ -128,6 +137,7 @@ const decToBin = (decimalValueInString) => {
   return bin;
 };
 
+// Hexadecimal To Binary
 const hexToBin = (hexValueInString) => {
   let dec = hexToDec(hexValueInString);
   let hexLength = hexValueInString.length * 4;
@@ -158,8 +168,6 @@ let resetFields = () => {
 
 // update content function
 let updateContents = () => {
-  //   fromConversionType.innerHTML = fromDropdown.value;
-  //   toConversionType.innerHTML = toDropdown.value;
   fromConversionType.forEach((element) => {
     element.innerHTML = fromDropdown.value;
   });
@@ -168,6 +176,14 @@ let updateContents = () => {
   });
   inputField.placeholder = fromDropdown.value;
   outputField.placeholder = toDropdown.value;
+};
+
+// update dropdown values function
+let updateDropdown = (event) => {
+  console.log(event.target.dataset.from);
+  fromDropdown.value = event.target.dataset.from;
+  toDropdown.value = event.target.dataset.to;
+  updateContents();
 };
 
 // number conversion function
@@ -275,10 +291,22 @@ let combineFunctions = () => {
 };
 
 // Event Listeners
+// window load event listener
 window.addEventListener("load", updateContents);
+// button event listeners
 convertButton.addEventListener("click", isFieldEmpty);
 resetButton.addEventListener("click", resetFields);
-// dropdownSelects.addEventListener("change", combineFunctions);
+// dropdown event listeners
 dropdownSelects.forEach((dropdown) => {
   dropdown.addEventListener("change", combineFunctions);
 });
+// listItem event listeners
+listItems.forEach((item) => {
+  item.addEventListener("click", updateDropdown);
+});
+// listItems.forEach((item) => {
+//   item.addEventListener("click", function name(event) {
+//     console.log(event.target.dataset.from);
+//     console.log(event.target.dataset.to);
+//   });
+// })
