@@ -26,6 +26,7 @@ footerYear.textContent = new Date().getFullYear();
 // Functions
 
 let isDecimal = (decValueInString) => {
+
     let decNumber = decNumber % 10
     if (decNumber >= 'A' || decNumber >= 'a')
         return;
@@ -38,6 +39,10 @@ let isHexa = (hexValueInString) => {
         return;
     hexNumber /= 16;
 };
+
+
+// =====================================
+// Conversion Functions
 
 
 // Hexadecimal to Decimal
@@ -93,7 +98,6 @@ const decToHex = (decValueInString) => {
 // Decimal to Octal
 const decToOct = (decValueInString) => {
     let decValue = parseInt(decValueInString);
-    let result = document.querySelector(".dtoResult");
 
     if (decValue == 0) {
         return "0000";
@@ -210,7 +214,7 @@ let swapDropdowns = () => {
     fromDropdown.value = toDropdown.value;
     toDropdown.value = temp;
     updateContents();
-}
+};
 
 // number conversion function
 let numConversions = () => {
@@ -235,7 +239,32 @@ let numConversions = () => {
         }
         // binary to binary
         else {
+
+            // hexadecimal to binary
+            if (toDropdown.value.toLowerCase() == "binary") {
+                // let dec = hexToDec(inputField.value);
+                let bin = hexToBin(inputField.value);
+                outputField.value = bin;
+            }
+            // hexadecimal to decimal
+            else if (toDropdown.value.toLowerCase() == "decimal") {
+                let dec = hexToDec(inputField.value);
+                outputField.value = dec;
+                // outputField.value = oct;
+            }
+            // hexadecimal to octal
+            else if (toDropdown.value.toLowerCase() == "octal") {
+                let dec = hexToDec(inputField.value);
+                let oct = decToOct(dec);
+                outputField.value = oct;
+            }
+            // hexadecimal to hexadecimal
+            else {
+                outputField.value = inputField.value;
+            }
+
             outputField.value = inputField.value;
+
         }
     }
     //~ Decimal Conversions
@@ -288,7 +317,6 @@ let numConversions = () => {
     else {
         // hexadecimal to binary
         if (toDropdown.value.toLowerCase() == "binary") {
-            // let dec = hexToDec(inputField.value);
             let bin = hexToBin(inputField.value);
             outputField.value = bin;
         }
