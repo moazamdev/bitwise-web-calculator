@@ -23,6 +23,50 @@ h3 {
   font-weight: 500;
   color: rgb(39, 39, 39);
 }
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+header {
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  background-color: white;
+  width: 100%;
+  margin-bottom: 40px;
+}
+.header-box {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 1150px;
+}
+.logo-box {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+.logo-box span {
+  font-size: 1.4em;
+  font-weight: 500;
+  color: rgb(233, 159, 0);
+}
+.logo {
+  width: 40px;
+}
+.nav-item {
+  cursor: pointer;
+  padding: 10px 20px;
+}
 .error-msg {
   color: crimson;
 }
@@ -33,6 +77,7 @@ h3 {
   flex-direction: row;
   gap: 60px;
   height: 70vh;
+  width: 1150px;
 }
 .leftContainer {
   display: flex;
@@ -127,7 +172,7 @@ button:hover,
 }
 
 footer {
-  width: 100%;
+  width: 1150px;
   display: flex;
   justify-content: space-between;
   margin-top: 80px;
