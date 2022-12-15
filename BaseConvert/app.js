@@ -26,25 +26,18 @@ footerYear.textContent = new Date().getFullYear();
 // Functions
 
 let isDecimal = (decValueInString) => {
-    let decNumber = parseInt(decValueInString);
-    while (dec != 0) {
-        if (decNumber % 10 > 41)
-            return false;
-    }
-    decnumber /= 10;
-
+    let decNumber = decNumber % 10
+    if (decNumber >= 'A' || decNumber >= 'a')
+        return;
+    decNumber /= 10;
 };
 
 let isHexa = (hexValueInString) => {
-    let hexNumber = parseInt(hexValueInString);
-    while (hex != 0) {
-        if (hexNumber % 10 > 47)
-            return false;
-    }
-    hexnumber /= 10;
-
+    let hexNumber = hexNumber % 16
+    if (hexNumber >= 'G' || hexNumber <= 'Z')
+        return;
+    hexNumber /= 16;
 };
-
 
 
 // Hexadecimal to Decimal
@@ -308,7 +301,8 @@ let numConversions = () => {
         // hexadecimal to octal
         else if (toDropdown.value.toLowerCase() == "octal") {
             let dec = hexToDec(inputField.value);
-            outputField.value = dec;
+            let oct = decToOct(dec);
+            outputField.value = oct;
         }
         // hexadecimal to hexadecimal
         else {
