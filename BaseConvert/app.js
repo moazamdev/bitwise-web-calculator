@@ -9,6 +9,7 @@ let toConversionType = document.querySelectorAll(".to-conversion-type");
 // button selectors
 let convertButton = document.querySelector("#convertButton");
 let resetButton = document.querySelector("#resetButton");
+let swapButton = document.querySelector("#swapButton");
 // input field selectors
 let inputField = document.querySelector("#inputField");
 let outputField = document.querySelector("#outputField");
@@ -148,6 +149,9 @@ const hexToBin = (hexValueInString) => {
   return result;
 };
 
+// =====================================
+// Other Functions
+
 // function for checking if field is empty
 let isFieldEmpty = () => {
   if (inputField.value.length == 0) {
@@ -185,6 +189,13 @@ let updateDropdown = (event) => {
   toDropdown.value = event.target.dataset.to;
   updateContents();
 };
+
+let swapDropdowns = () => {
+  let temp = fromDropdown.value; 
+  fromDropdown.value = toDropdown.value;
+  toDropdown.value = temp;
+  updateContents();
+}
 
 // number conversion function
 let numConversions = () => {
@@ -296,6 +307,7 @@ window.addEventListener("load", updateContents);
 // button event listeners
 convertButton.addEventListener("click", isFieldEmpty);
 resetButton.addEventListener("click", resetFields);
+swapButton.addEventListener("click", swapDropdowns);
 // dropdown event listeners
 dropdownSelects.forEach((dropdown) => {
   dropdown.addEventListener("change", combineFunctions);
@@ -304,9 +316,3 @@ dropdownSelects.forEach((dropdown) => {
 listItems.forEach((item) => {
   item.addEventListener("click", updateDropdown);
 });
-// listItems.forEach((item) => {
-//   item.addEventListener("click", function name(event) {
-//     console.log(event.target.dataset.from);
-//     console.log(event.target.dataset.to);
-//   });
-// })
