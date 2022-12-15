@@ -67,6 +67,10 @@ header {
   cursor: pointer;
   padding: 10px 20px;
 }
+sub{
+  color: rgb(233, 159, 0);
+  font-weight: 500;
+}
 .error-msg {
   color: crimson;
 }
