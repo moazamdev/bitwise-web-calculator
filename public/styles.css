@@ -178,6 +178,7 @@ button:hover,
 	line-height: 2em;
 	color: black;
 	cursor: pointer;
+	font-size: 1.2em;
 }
 .item:hover {
 	color: rgb(233, 159, 0);
@@ -225,7 +226,7 @@ footer {
 @media screen and (max-width: 480px) {
 	/* Add mobile-specific styles here */
 	body {
-		font-size: 2em;
+		font-size: 2.3em;
 		width: fit-content;
 	}
 	header {
@@ -245,16 +246,15 @@ footer {
 	.container {
 		flex-direction: column;
 		width: clamp(330px, 100%, 100%);
-		/* max-width: 480px; */
 		padding: 10px;
-		/* height: auto; */
 	}
-	.leftContainer, .rightContainer {
+	.leftContainer,
+	.rightContainer {
 		/* width: clamp(330px, 80%, 410px); */
-		width: 80%;
-		padding: 40px;
+		width: 90%;
+		padding: 50px;
 	}
-	
+
 	.selectInputFieldsBox {
 		flex-direction: column;
 	}
@@ -262,8 +262,17 @@ footer {
 	.to-dropdown {
 		width: 100%;
 	}
-	.inputFieldsBox {
-		width: fit-content;
+	.inputFieldsBox,
+	.outputBox,
+	.buttonBox {
+		width: 100%;
+	}
+	.buttonBox button {
+		width: inherit;
+		margin: 10px 0;
+	}
+	footer {
+		padding: 20px;
 	}
 }
 
