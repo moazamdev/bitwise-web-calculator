@@ -274,15 +274,20 @@ footer {
 	footer {
 		padding: 20px;
 	}
+	label
+	{
+		margin-top: 20px;
+		font-size: 1.2em;
+	}
 	select,
 	input,
 	option {
-		padding: 15px;
+		padding: 30px;
 		font-size: 1.2em;
 		border: 1px solid #555555;
 	}
 	button {
-		padding: 50px 30px;
+		padding: 30px 30px;
 		font-size: 1em;
 		border: 1px solid #555555;
 		font-weight: 500;
