@@ -13,6 +13,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	margin: auto;
 }
 h1 {
 	color: rgb(233, 159, 0);
@@ -38,6 +39,7 @@ header {
 	background-color: white;
 	width: 100%;
 	margin-bottom: 40px;
+	height: 20%;
 }
 .header-box {
 	padding: 20px;
@@ -74,13 +76,16 @@ sub {
 .error-msg {
 	color: crimson;
 }
+header {
+	height: 20%;
+}
 .container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
 	gap: 60px;
-	height: 70vh;
+	height: 80%;
 	width: 1150px;
 }
 .leftContainer {
@@ -88,7 +93,7 @@ sub {
 	justify-content: center;
 	flex-direction: column;
 	height: 100%;
-	width: 700px;
+	width: 70%;
 	padding: 60px;
 	background: rgb(248, 248, 248);
 	border-radius: 2px;
@@ -187,3 +192,108 @@ footer {
 #footer-msg {
 	align-self: center;
 }
+
+/* Media Queries */
+
+/* Tablet (portrait and landscape) */
+@media screen and (max-width: 768px) {
+	/* Add tablet-specific styles here */
+	body {
+		width: fit-content;
+	}
+	.wrapper {
+		width: fit-content;
+	}
+	.container {
+		padding: 30px;
+		flex-direction: column;
+		/* width:fit-content; */
+	}
+	.leftContainer {
+		width: 100%;
+	}
+	.rightContainer {
+		width: 100%;
+	}
+	footer {
+		padding: 0 30px;
+	}
+}
+
+/* Mobile (portrait and landscape) */
+@media screen and (max-width: 480px) {
+	/* Add mobile-specific styles here */
+	body {
+		font-size: 25px;
+		width: fit-content;
+	}
+	header {
+		width: 100%;
+	}
+	.logo {
+		width: 5em;
+	}
+	nav {
+		display: none;
+	}
+	.header-box {
+		justify-content: start;
+		width: 100%;
+	}
+	.container {
+		flex-direction: column;
+		width: fit-content;
+		padding: 20px;
+		height: auto;
+	}
+	.leftContainer {
+		padding: 40px;
+		width: fit-content;
+	}
+	.selectInputFieldsBox {
+		flex-direction: column;
+	}
+	.from-dropdown,
+	.to-dropdown {
+		width: 100%;
+	
+	}
+	.inputFieldsBox {
+		width: fit-content;
+	}
+}
+
+
+
+/* Laptop */
+/* @media screen and (min-width: 769px) and (max-width: 1024px) { */
+/* Add laptop-specific styles here */
+/* } */
+
+/* Desktop
+@media screen and (min-width: 1025px) {
+	/* Add desktop-specific styles here */
+/* } */
+/* 
+@media only screen and (max-width: 375px) {
+	body {
+		max-width: 375px;
+	}
+	.wrapper {
+		flex-direction: column;
+		width: 100%;
+	}
+	header {
+		width: 100%;
+	}
+	.header-box {
+		z-index: 999;
+		width: 100%;
+	}
+	.container {
+		flex-direction: column;
+	}
+	.leftContainer {
+		width: 100vw;
+	}
+} */
