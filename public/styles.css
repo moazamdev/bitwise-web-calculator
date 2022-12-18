@@ -196,9 +196,10 @@ footer {
 /* Media Queries */
 
 /* Tablet (portrait and landscape) */
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
 	/* Add tablet-specific styles here */
 	body {
+		font-size: 2em;
 		width: fit-content;
 	}
 	.wrapper {
@@ -224,15 +225,16 @@ footer {
 @media screen and (max-width: 480px) {
 	/* Add mobile-specific styles here */
 	body {
-		font-size: 25px;
+		font-size: 2em;
 		width: fit-content;
 	}
 	header {
 		width: 100%;
 	}
 	.logo {
-		width: 5em;
+		width: 3em;
 	}
+
 	nav {
 		display: none;
 	}
@@ -242,28 +244,28 @@ footer {
 	}
 	.container {
 		flex-direction: column;
-		width: fit-content;
-		padding: 20px;
-		height: auto;
+		width: clamp(330px, 100%, 100%);
+		/* max-width: 480px; */
+		padding: 10px;
+		/* height: auto; */
 	}
-	.leftContainer {
+	.leftContainer, .rightContainer {
+		/* width: clamp(330px, 80%, 410px); */
+		width: 80%;
 		padding: 40px;
-		width: fit-content;
 	}
+	
 	.selectInputFieldsBox {
 		flex-direction: column;
 	}
 	.from-dropdown,
 	.to-dropdown {
 		width: 100%;
-	
 	}
 	.inputFieldsBox {
 		width: fit-content;
 	}
 }
-
-
 
 /* Laptop */
 /* @media screen and (min-width: 769px) and (max-width: 1024px) { */
