@@ -274,37 +274,18 @@ footer {
 	footer {
 		padding: 20px;
 	}
+	select,
+	input,
+	option {
+		padding: 15px;
+		font-size: 1.2em;
+		border: 1px solid #555555;
+	}
+	button {
+		padding: 50px 30px;
+		font-size: 1em;
+		border: 1px solid #555555;
+		font-weight: 500;
+		cursor: pointer;
+	}
 }
-
-/* Laptop */
-/* @media screen and (min-width: 769px) and (max-width: 1024px) { */
-/* Add laptop-specific styles here */
-/* } */
-
-/* Desktop
-@media screen and (min-width: 1025px) {
-	/* Add desktop-specific styles here */
-/* } */
-/* 
-@media only screen and (max-width: 375px) {
-	body {
-		max-width: 375px;
-	}
-	.wrapper {
-		flex-direction: column;
-		width: 100%;
-	}
-	header {
-		width: 100%;
-	}
-	.header-box {
-		z-index: 999;
-		width: 100%;
-	}
-	.container {
-		flex-direction: column;
-	}
-	.leftContainer {
-		width: 100vw;
-	}
-} */
